@@ -1,9 +1,9 @@
 import React from 'react';
-import Login from './components/Login';
 import { useSelector } from 'react-redux';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from './components/Login';
 import NavBar from './components/NavBar';
 import Products from './components/Products';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ShoppingCart from './components/ShoppingCart';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             <Route path="/" component={Products} />
           </Switch>
         </Router>
-      )}    
+      )}
     </div>
   );
 }
