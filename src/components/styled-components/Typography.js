@@ -6,6 +6,8 @@ const getFontSize = (fontSizeName) => {
       return '4em';
     case 'h2':
       return '3em';
+    case 'h3':
+      return '2em';
     default:
       return '1em';
   }
