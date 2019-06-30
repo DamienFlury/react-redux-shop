@@ -10,15 +10,15 @@ function App() {
   const authState = useSelector(state => state.authentication);
   return (
     <div>
-      <NavBar />
-      {!authState.isAuthenticated ? <Login /> : (
-        <Router>
+      <Router>
+        <NavBar />
+        {!authState.isAuthenticated ? <Login /> : (
           <Switch>
             <Route path="/shopping-cart" component={ShoppingCart} />
             <Route path="/" component={Products} />
           </Switch>
-        </Router>
-      )}
+        )}
+      </Router>
     </div>
   );
 }

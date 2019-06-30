@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import AppBar from './styled-components/AppBar';
 import Toolbar from './styled-components/Toolbar';
 import Typography from './styled-components/Typography';
+import StyledNavLink from './styled-components/StyledNavLink';
 
 const NavLinks = styled.div`
   flex: 1;
@@ -17,7 +18,8 @@ const NavBar = () => {
       <Toolbar>
         <Typography variant="h3">Shop</Typography>
         <NavLinks>
-          <Typography>Home</Typography>
+          <StyledNavLink to="/home">Home</StyledNavLink>
+          <StyledNavLink to="/shopping-cart">Shopping Cart</StyledNavLink>
         </NavLinks>
         <Typography>
 Shopping cart:

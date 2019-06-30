@@ -5,6 +5,7 @@ import Paper from './styled-components/Paper';
 import TextField from './styled-components/TextField';
 import Button from './styled-components/Button';
 import Typography from './styled-components/Typography';
+import { login } from '../store/actions/authentication-actions';
 
 const Wrapper = styled(Paper)`
     max-width: 1024px;
@@ -23,7 +24,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: 'LOGIN', payload: { username, password } });
+    dispatch(login(username, password));
   };
 
   return (
