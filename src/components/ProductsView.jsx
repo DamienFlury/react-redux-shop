@@ -55,7 +55,7 @@ const ProductsView = ({ products }) => {
                 {product.price.toFixed(2)}
               </Typography>
             </div>
-            <StyledButton onClick={() => addProductToCart(product)}>Add To Cart</StyledButton>
+            <StyledButton color="secondary" onClick={() => addProductToCart(product)}>Add To Cart</StyledButton>
           </Info>
         </StyledPaper>
       ))}

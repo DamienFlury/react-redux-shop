@@ -9,6 +9,7 @@ import store from './store/store';
 const theme = {
   palette: {
     primary: ['#aa0000', '#990000', '#770000'],
+    secondary: ['#00aaff', '#0099dd', '#0088cc'],
   },
   shadows: ['0 1px 3px #555555', '0 1px 4px #555555', '0 1px 5px #555555'],
   borderRadius: '4px',

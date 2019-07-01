@@ -78,7 +78,7 @@ Total:
               </Typography>
             </CheckoutText>
             {isLoading ? <Button disabled>Loading</Button>
-              : <Button onClick={handleClick}>Check out</Button> }
+              : <Button color="secondary" onClick={handleClick}>Check out</Button> }
           </>
         )}
     </Wrapper>
