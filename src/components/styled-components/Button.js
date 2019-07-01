@@ -13,9 +13,13 @@ const Button = styled.button`
     &:disabled {
         background-color: #aaaaaa;
     }
-    &:active {
+    &:hover {
         background-color: ${props => props.theme.palette.primary[1]};
         box-shadow: ${props => props.theme.shadows[1]};
+    }
+    &:active {
+        background-color: ${props => props.theme.palette.primary[2]};
+        box-shadow: ${props => props.theme.shadows[2]};
     }
 `;
 

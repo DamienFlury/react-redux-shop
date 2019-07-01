@@ -4,10 +4,12 @@ import { useSelector } from 'react-redux';
 
 const ShoppingCart = () => {
   const cart = useSelector(state => state.cart);
+  console.log(cart);
   return (
     <div>
-            Hey
-      {cart.length}
+      <div>
+        {cart.map(product => <div>{product.name}</div>)}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import AppBar from './styled-components/AppBar';
 import Toolbar from './styled-components/Toolbar';
@@ -11,24 +10,21 @@ const NavLinks = styled.div`
   margin-left: 20px;
 `;
 
-const NavBar = () => {
-  const cartCount = useSelector(state => state.cart.length);
-  return (
-    <AppBar>
-      <Toolbar>
-        <Typography variant="h3">Shop</Typography>
-        <NavLinks>
-          <StyledNavLink to="/home">Home</StyledNavLink>
-          <StyledNavLink to="/shopping-cart">Shopping Cart</StyledNavLink>
-        </NavLinks>
-        <Typography>
-Shopping cart:
-          {' '}
-          {cartCount}
-        </Typography>
-      </Toolbar>
-    </AppBar>
-  );
-};
+const AppTitle = styled(Typography)`
+  margin-left: 20px;
+`;
+
+const NavBar = () => (
+  <AppBar>
+    <Toolbar>
+      <AppTitle variant="h3">Shop</AppTitle>
+      <NavLinks>
+        <StyledNavLink to="/">Home</StyledNavLink>
+        <StyledNavLink to="/products">Products</StyledNavLink>
+      </NavLinks>
+      <StyledNavLink to="/shopping-cart"><i className="material-icons" style={{ fontSize: '1.2em' }}>shopping_cart</i></StyledNavLink>
+    </Toolbar>
+  </AppBar>
+);
 
 export default NavBar;

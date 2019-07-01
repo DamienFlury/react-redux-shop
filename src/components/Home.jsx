@@ -1,22 +1,26 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import ProductsView from './ProductsView';
 import Typography from './styled-components/Typography';
+import ProductsView from './ProductsView';
+
 
 const Title = styled(Typography)`
   display: inline-block;
   margin: 20px;
 `;
 
-const Products = () => {
+const Home = () => {
   const products = useSelector(state => state.products);
+  const featuredProducts = products
+    .filter(product => product.popularity >= 0.5)
+    .sort((a, b) => b.popularity - a.popularity);
   return (
     <div>
-      <Title variant="h2">Products</Title>
-      <ProductsView products={products} />
+      <Title variant="h2">Featured Products</Title>
+      <ProductsView products={featuredProducts} />
     </div>
   );
 };
 
-export default Products;
+export default Home;
