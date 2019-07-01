@@ -15,6 +15,7 @@ const getFontSize = (fontSizeName) => {
 
 const Typography = styled.span`
     font-size: ${props => getFontSize(props.variant)};
+    font-family: ${props => props.theme.fontFamily};
 `;
 
 

@@ -9,6 +9,7 @@ const Button = styled.button`
     color: white;
     outline: none;
     transition: .2s;
+    cursor: pointer;
     &:disabled {
         background-color: #aaaaaa;
     }
