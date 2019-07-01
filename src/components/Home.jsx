@@ -11,7 +11,7 @@ const Title = styled(Typography)`
 `;
 
 const Home = () => {
-  const products = useSelector(state => state.products);
+  const products = useSelector(state => state.productsReducer.products);
   const featuredProducts = products
     .filter(product => product.popularity >= 0.5)
     .sort((a, b) => b.popularity - a.popularity);

@@ -10,7 +10,7 @@ const Title = styled(Typography)`
 `;
 
 const Products = () => {
-  const products = useSelector(state => state.products);
+  const products = useSelector(state => state.productsReducer.products);
   return (
     <div>
       <Title variant="h2">Products</Title>

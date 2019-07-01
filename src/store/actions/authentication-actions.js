@@ -1,5 +1,5 @@
-export const LOGIN_START = 'LOGIN_START';
-export const LOGIN_ERROR = 'LOGIN_ERROR';
+export const LOGIN_PENDING = 'LOGIN_PENDING';
+export const LOGIN_REJECTED = 'LOGIN_REJECTED';
 export const LOGIN_FULFILLED = 'LOGIN_FULFILLED';
 export const LOGOUT = 'LOGOUT';
 
@@ -10,12 +10,12 @@ export const login = (username, password) => (dispatch) => {
     dispatch({ type: LOGIN_FULFILLED, payload: { token: tokenFromLocalStorage } });
     return;
   }
-  dispatch({ type: LOGIN_START });
+  dispatch({ type: LOGIN_PENDING });
   if (username === 'abc' && password === '1234') {
     localStorage.setItem('token', '1234');
     dispatch({ type: LOGIN_FULFILLED, payload: { token: '1234' } });
   } else {
-    dispatch({ type: LOGIN_ERROR });
+    dispatch({ type: LOGIN_REJECTED });
   }
 };
 

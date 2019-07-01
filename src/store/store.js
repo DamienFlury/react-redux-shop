@@ -8,8 +8,8 @@ import productsReducer from './reducers/products-reducer';
 
 const rootReducer = combineReducers({
   authentication: authenticationReducer,
-  cart: cartReducer,
-  products: productsReducer,
+  cartReducer,
+  productsReducer,
 });
 
 // eslint-disable-next-line no-underscore-dangle

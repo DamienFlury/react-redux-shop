@@ -9,15 +9,17 @@ const Button = styled.button`
     color: white;
     outline: none;
     transition: .2s;
-    cursor: pointer;
+    &:enabled {
+        cursor: pointer;
+    }
     &:disabled {
         background-color: #aaaaaa;
     }
-    &:hover {
+    &:hover:enabled {
         background-color: ${props => props.theme.palette.primary[1]};
         box-shadow: ${props => props.theme.shadows[1]};
     }
-    &:active {
+    &:active:enabled {
         background-color: ${props => props.theme.palette.primary[2]};
         box-shadow: ${props => props.theme.shadows[2]};
     }

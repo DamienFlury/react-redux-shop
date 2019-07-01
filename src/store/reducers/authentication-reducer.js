@@ -1,12 +1,12 @@
 import {
-  LOGIN_START, LOGIN_ERROR, LOGIN_FULFILLED, LOGOUT,
+  LOGIN_PENDING, LOGIN_REJECTED, LOGIN_FULFILLED, LOGOUT,
 } from '../actions/authentication-actions';
 
 const authenticationReducer = (state = { isAuthenticated: false, token: '', isLoading: false }, action) => {
   switch (action.type) {
-    case LOGIN_START:
+    case LOGIN_PENDING:
       return { ...state, isLoading: true };
-    case LOGIN_ERROR:
+    case LOGIN_REJECTED:
       return {
         ...state, isLoading: false,
       };
