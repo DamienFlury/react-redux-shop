@@ -13,7 +13,7 @@ const theme = {
   },
   shadows: ['0 1px 3px #555555', '0 1px 4px #555555', '0 1px 5px #555555'],
   borderRadius: '4px',
-  fontFamily: 'Montserrat',
+  fontFamily: 'Open Sans, sans-serif',
 };
 
 ReactDOM.render(
