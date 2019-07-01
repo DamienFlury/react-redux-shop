@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Paper from './styled-components/Paper';
 import Button from './styled-components/Button';
 import Typography from './styled-components/Typography';
+import { addProduct } from '../store/actions/cart-actions';
 
 const StyledPaper = styled(Paper)`
   width: auto;
@@ -36,7 +37,7 @@ const StyledButton = styled(Button)`
 const ProductsView = ({ products }) => {
   const dispatch = useDispatch();
   const addProductToCart = (product) => {
-    dispatch({ type: 'ADD_PRODUCT', payload: { product } });
+    dispatch(addProduct(product));
   };
   return (
     <Grid>

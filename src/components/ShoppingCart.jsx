@@ -6,7 +6,7 @@ import List from './styled-components/List';
 import ListItem from './styled-components/ListItem';
 import Paper from './styled-components/Paper';
 import Button from './styled-components/Button';
-import { checkout } from '../store/actions/cart-actions';
+import { checkout, removeProductById } from '../store/actions/cart-actions';
 import Spacer from './styled-components/Spacer';
 
 const Wrapper = styled.div`
@@ -18,6 +18,10 @@ const Title = styled(Typography)`
 
 const ListWrapper = styled(Paper)`
   margin: 20px 0;
+`;
+
+const RemoveButton = styled(Button)`
+  margin-left: 20px;
 `;
 
 const CheckoutText = styled.div`
@@ -42,6 +46,9 @@ const ShoppingCart = () => {
   const handleClick = () => {
     dispatch(checkout());
   };
+  const handleRemove = (id) => {
+    dispatch(removeProductById(id));
+  };
   return (
     <Wrapper>
       <Title variant="h2">Shopping Cart</Title>
@@ -58,6 +65,7 @@ const ShoppingCart = () => {
                     <Typography>{product.name}</Typography>
                     <Spacer />
                     <Typography>{product.price.toFixed(2)}</Typography>
+                    <RemoveButton onClick={() => handleRemove(product.id)}>Remove</RemoveButton>
                   </ListItem>
                 ))}
               </List>
