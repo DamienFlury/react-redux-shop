@@ -11,7 +11,7 @@ const theme = {
     primary: ['#ff3366', '#f83366', '#ee3366'],
     secondary: ['#00aaff', '#0099dd', '#0088cc'],
   },
-  shadows: ['0 1px 3px #555555', '0 1px 4px #555555', '0 1px 5px #555555'],
+  shadows: ['0 1px 3px #999999', '0 1px 4px #999999', '0 1px 5px #999999'],
   borderRadius: '4px',
   fontFamily: 'Open Sans, sans-serif',
 };

@@ -9,6 +9,7 @@ import { addProduct } from '../store/actions/cart-actions';
 const StyledPaper = styled(Paper)`
   width: auto;
   margin: 20px;
+  overflow: hidden;
 `;
 
 const Grid = styled.div`
