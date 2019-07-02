@@ -33,6 +33,9 @@ const products = [
   {
     id: 10, name: 'IceTea', popularity: 0.3, price: 1.40, image: 'https://www.marlenessweetthings.ch/wp-content/uploads/2019/05/Migros-Kult-Ice-Tea12.jpg',
   },
+  {
+    id: 11, name: 'Peaches', popularity: 0.6, price: 2.00, image: 'https://www.gesundheit.gv.at/GenticsImageStore/547/auto/prop/r/leben/ernaehrung/saisonkalender/Pfirsich.jpg?pamlz2&validation=094cf28c1f11069d9fe2aeab3503abbcf2e43ee11c88b8f7870e9745b03c9d58',
+  },
 ];
 
 export const fetchProducts = () => (dispatch) => {

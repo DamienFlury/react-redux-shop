@@ -41,7 +41,7 @@ const Image = styled.img`
 `;
 
 const ShoppingCart = () => {
-  const { products, isLoading } = useSelector(state => state.cartReducer);
+  const { items, isLoading } = useSelector(state => state.cartReducer);
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(checkout());
@@ -52,20 +52,25 @@ const ShoppingCart = () => {
   return (
     <Wrapper>
       <Title variant="h2">Shopping Cart</Title>
-      {products.length === 0 ? <div><Typography>Cart empty</Typography></div>
+      {items.length === 0 ? <div><Typography>Cart empty</Typography></div>
         : (
           <>
             <ListWrapper>
               <List>
-                {products.map(product => (
-                  <ListItem key={product.id}>
+                {items.map(item => (
+                  <ListItem key={item.id}>
                     <ImageWrapper>
-                      <Image src={product.image} alt="thumbnail" />
+                      <Image src={item.product.image} alt="thumbnail" />
                     </ImageWrapper>
-                    <Typography>{product.name}</Typography>
+                    <Typography>
+                      {item.product.name}
+                      {' '}
+x
+                      {item.quantity}
+                    </Typography>
                     <Spacer />
-                    <Typography>{product.price.toFixed(2)}</Typography>
-                    <RemoveButton onClick={() => handleRemove(product.id)}>Remove</RemoveButton>
+                    <Typography>{(item.quantity * item.product.price).toFixed(2)}</Typography>
+                    <RemoveButton onClick={() => handleRemove(item.id)}>Remove</RemoveButton>
                   </ListItem>
                 ))}
               </List>
@@ -74,7 +79,9 @@ const ShoppingCart = () => {
               <Typography>
 Total:
                 {' '}
-                {products.reduce((acc, current) => acc + current.price, 0).toFixed(2)}
+                {items
+                  .reduce((acc, current) => acc + current.quantity * current.product.price, 0)
+                  .toFixed(2)}
               </Typography>
             </CheckoutText>
             {isLoading ? <Button disabled>Loading</Button>
