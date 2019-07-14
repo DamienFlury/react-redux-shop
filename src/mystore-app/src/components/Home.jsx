@@ -1,8 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import Typography from './styled-components/Typography';
 import ProductsView from './ProductsView';
+import useProducts from '../hooks/useProducts';
 
 
 const Title = styled(Typography)`
@@ -11,13 +11,13 @@ const Title = styled(Typography)`
 `;
 
 const Home = () => {
-  const products = useSelector(state => state.productsReducer.products);
+  const products = useProducts();
   const featuredProducts = products
     .filter(product => product.popularity >= 0.5)
     .sort((a, b) => b.popularity - a.popularity);
   return (
     <div>
-      <Title variant="h2">Featured Products</Title>
+      <Title variant="h2" animate={{ x: 20 }}>Featured Products</Title>
       <ProductsView products={featuredProducts} />
     </div>
   );
