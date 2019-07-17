@@ -1,4 +1,4 @@
-import { FETCH_PENDING, FETCH_FULFILLED } from '../actions/products-actions';
+import { FETCH_PENDING, FETCH_FULFILLED, FETCH_REJECTED } from '../actions/products-actions';
 
 
 const productsReducer = (state = { isLoading: false, products: [] }, action) => {
@@ -7,6 +7,8 @@ const productsReducer = (state = { isLoading: false, products: [] }, action) => 
       return { ...state, isLoading: true };
     case FETCH_FULFILLED:
       return { ...state, isLoading: false, products: action.payload.products };
+    case FETCH_REJECTED:
+      return { ...state, isLoading: false, error: action.payload.error };
     default:
       return state;
   }

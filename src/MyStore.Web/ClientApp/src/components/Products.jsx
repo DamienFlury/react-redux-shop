@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 import ProductsView from './ProductsView';
 import Typography from './styled-components/Typography';
 import useProducts from '../hooks/useProducts';

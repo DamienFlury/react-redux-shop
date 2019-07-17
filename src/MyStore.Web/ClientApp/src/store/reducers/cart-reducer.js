@@ -17,7 +17,10 @@ const cartReducer = (state = { items: [], isLoading: false }, { type, payload })
       return {
         ...state,
         items: [...state.items, {
-          id: payload.product.id, productId: payload.product.id, product: payload.product, quantity: 1,
+          id: payload.product.id,
+          productId: payload.product.id,
+          product: payload.product,
+          quantity: 1,
         }],
       };
     case REMOVE_PRODUCT_BY_ID:
