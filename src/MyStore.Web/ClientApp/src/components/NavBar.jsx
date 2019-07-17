@@ -21,6 +21,7 @@ const NavBar = () => (
       <NavLinks>
         <StyledNavLink to="/">Home</StyledNavLink>
         <StyledNavLink to="/products">Products</StyledNavLink>
+        <StyledNavLink to="/purchases">My Purchases</StyledNavLink>
       </NavLinks>
       <StyledNavLink to="/shopping-cart"><i className="material-icons" style={{ fontSize: '1.2em' }}>shopping_cart</i></StyledNavLink>
     </Toolbar>
