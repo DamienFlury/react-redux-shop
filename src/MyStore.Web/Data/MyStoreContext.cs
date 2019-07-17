@@ -8,6 +8,9 @@ namespace MyStore.Web.Data {
     protected override void OnModelCreating (ModelBuilder modelBuilder) {
       base.OnModelCreating (modelBuilder);
       // modelBuilder.Entity<ProductPurchase>().HasKey(pp => new { pp.ProductId, pp.PurchaseId});
+      modelBuilder.Entity<CartItem>().Property(ci => ci.Id).ValueGeneratedOnAdd();
+      modelBuilder.Entity<Product>().Property(p => p.Id).ValueGeneratedOnAdd();
+      modelBuilder.Entity<Purchase>().Property(p => p.Id).ValueGeneratedOnAdd();
 
       var products = new [] {
         new Product {
