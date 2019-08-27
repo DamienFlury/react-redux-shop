@@ -7,7 +7,7 @@ import ListItem from './styled-components/ListItem';
 
 export default function Purchases() {
   const dispatch = useDispatch();
-  const purchases = useSelector(state => state.purchasesReducer.purchases);
+  const purchases = useSelector((state) => state.purchasesReducer.purchases);
   // const products = useSelector(state => state.productsReducer.products);
 
   // const purchasesWithProducts = purchases.map(p
@@ -19,12 +19,12 @@ export default function Purchases() {
     if (purchases.length === 0) {
       dispatch(fetchPurchases());
     }
-  }, [purchases]);
+  }, [purchases, dispatch]);
 
   return (
     <Paper>
       <List>
-        {purchases.map(purchase => (
+        {purchases.map((purchase) => (
           <ListItem key={purchase.id}>
             {purchase.id}
             {' '}

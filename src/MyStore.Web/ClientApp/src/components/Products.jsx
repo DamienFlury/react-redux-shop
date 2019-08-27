@@ -22,6 +22,7 @@ const variants = {
 
 const Products = () => {
   const products = useProducts();
+
   return (
     <div>
       <Title variant="h2" variants={variants} animate="visible">Products</Title>
