@@ -19,7 +19,7 @@ export default function Purchases() {
     if (purchases.length === 0) {
       dispatch(fetchPurchases());
     }
-  }, [purchases]);
+  }, [purchases, dispatch]);
 
   return (
     <Paper>

@@ -9,7 +9,7 @@ const useProducts = () => {
     if (products.length === 0) {
       dispatch(fetchProducts());
     }
-  }, []);
+  }, [dispatch]);
   return products;
 };
 

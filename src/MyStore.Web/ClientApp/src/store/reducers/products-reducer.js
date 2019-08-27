@@ -6,9 +6,9 @@ const productsReducer = (state = { isLoading: false, products: [] }, action) => 
     case FETCH_PRODUCTS_PENDING:
       return { ...state, isLoading: true };
     case FETCH_PRODUCTS_FULFILLED:
-      return { ...state, isLoading: false, products: action.payload.products };
+      return { ...state, isLoading: false, products: action.products };
     case FETCH_PRODUCTS_REJECTED:
-      return { ...state, isLoading: false, error: action.payload.error };
+      return { ...state, isLoading: false, error: action.error };
     default:
       return state;
   }
